@@ -1,0 +1,53 @@
+Robot（ABB IRB140）
+1.Mechanism Configuration:Gravity [0 0 -9.80665];
+2.Solver Configuration:(默认)
+3.Link
+base_link：m =12.409016159487; //单位默认kg
+	   质心 =[0,0,0];
+	   惯性矩=[0.104502176006253, 0.246486764065977, 0.16727784258504];
+           惯性积=[0.000843006810157312, 1.00520827530156e-05, 0.00734284655670482]; //单位默认kg*m^2
+
+link_1：m =16.287755696602;
+	   质心 =[0,0,0];   //单位默认kg
+	   惯性矩=[0.239763088891016, 0.215279593840589, 0.21738294278782];
+           惯性积=[-0.0324602456686847, 0.000698689923332581, -0.0247090810274521]; //单位默认kg*m^2
+
+link_2：m =7.58037424484438;
+	   质心 =[0,0,0];   //单位默认kg
+	   惯性矩=[0.155736578403723, 0.0449374006069967, 0.131499062854069];
+           惯性积=[0.0179772597993246, -0.000516100043145016, -0.0018292494088038]; //单位默认kg*m^2
+
+link_3：m =8.03072730997701;
+	   质心 =[0,0,0];   //单位默认kg
+	   惯性矩=[0.0322819185861096, 0.0862439596837411, 0.0941344479457789];
+           惯性积=[0.000363121583074651, -0.00301812650515099, 0.00189304098071818]; //单位默认kg*m^2
+
+link_4：m =1.7702548022269;
+	   质心 =[0,0,0];   //单位默认kg
+	   惯性矩=[0.00345886724545012, 0.00814796317500158, 0.00727417938725734];
+           惯性积=[3.05102860299544e-06, -0.000204665310780048, -5.89845314013543e-05]; //单位默认kg*m^2
+
+
+link_5：m =0.0258654328719498;
+	   质心 =[0,0,0];   //单位默认kg
+	   惯性矩=[5.9822143548355e-06, 6.2921914507958e-06, 6.17479327327778e-06];
+           惯性积=[6.75626369217644e-13, -3.33091906738059e-13, 4.58244484401765e-08]; //单位默认kg*m^2
+
+Servo system (Simlified PMSM Drive)
+1.DC Voltage Source =12V;
+Electrial Torque
+2.Parameterize by: Tabulated torgue-speed envelope;
+3.Vector of rotational speeds：[0 0.98 0.99 1] * rpm_max（5000）r/min;
+4.Vector of maximum torgue values: [1 1 1 0] * trq_stall(7) N*m;
+5.Torgue control time constant,Tc:Ti(0.001)s;
+Electrial Losses
+6.Parameterize losses by: Single efficiency measurement
+7.Motor and driver overall efficiency(percent): eta(100);
+8.Speed at which efficiency is measured: rpm_eta(3000);
+9.Torque at which efficiency is measured: trq_eta(2.07);
+Mechanical
+10.Rotor inertia: J(0.672*1e-4);
+11.Rotor damping: 0
+Initial rotor speed: rpm0(0);
+Gear Box
+Gear ratio:gearRatio(10);
